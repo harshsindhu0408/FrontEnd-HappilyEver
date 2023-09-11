@@ -1,11 +1,9 @@
 import React from 'react';
 import { createClientMessage } from 'react-chatbot-kit';
-import { useDispatch, useSelector } from 'react-redux';
-import { setName, setAge } from '../userSlice';
+import { useSelector } from 'react-redux';
 
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  const dispatch = useDispatch();
 
   const greet2 = () => {
     const userMessage = createClientMessage('Got it!');

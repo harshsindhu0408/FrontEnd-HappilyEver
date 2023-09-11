@@ -19,8 +19,6 @@ function App() {
               messageParser={MessageParser}
               actionProvider={ActionProvider}
             />}>
-            {/* Provide props to ChatbotComponent */}
-            
           </Route>
           <Route path="/page3" element={<Page3 />} />
         </Routes>

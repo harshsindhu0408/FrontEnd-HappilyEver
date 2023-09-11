@@ -15,7 +15,7 @@ const config = {
       `Hello, Welcome to student info system! `,
       {
         withAvatar: true,
-        widget: 'gotItWidget', // Add the widget for the "Got it!" button
+        widget: 'gotItWidget',
       }
     ),
   ],

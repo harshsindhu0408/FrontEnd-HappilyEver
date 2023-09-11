@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from "react";
 const TimeSlotStrip = (props) => {
   const timeSlots = [
     'Morning 11AM',
@@ -8,7 +7,6 @@ const TimeSlotStrip = (props) => {
   ];
 
   const handleTimeSlotClick = (timeSlot) => {
-    // Handle the click event when a time slot is selected
     props.actionProvider.handleSlot(timeSlot);
   };
 

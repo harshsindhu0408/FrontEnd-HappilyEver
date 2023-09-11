@@ -1,14 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setName, setAge } from '../userSlice';
+import { setName } from '../userSlice';
 
 const MessageParser = ({ children, actions }) => {
   const dispatch = useDispatch();
   const parse = (message) => {
-    // const lowercase = message.toLowerCase();
-    if (message.includes('option')) {
-      actions.handleOptions();
-    }
     const nameRegex = /^[a-z A-Z]+$/; // Simple regex to match alphabetic names
     if (nameRegex.test(message)) {
       actions.handleCalendar(message);

@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from "react";
 
 const CalendarStrip = ( props ) => {
-  // Define the number of days to display
-  const numDays = 7;
+  const numDays = 8;
 
-  // Create an array of dates starting from today
   const currentDate = new Date();
   const dates = Array.from({ length: numDays }, (_, index) => {
     const date = new Date(currentDate);
@@ -13,7 +11,6 @@ const CalendarStrip = ( props ) => {
   });
 
   const handleDateClick = (date) => {
-    // Handle the click event when a date is selected
     const formattedDate = `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}`;
     props.actionProvider.handleDate(formattedDate);
     console.log(date);
