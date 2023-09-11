@@ -29,7 +29,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleCalendar  = (date) => {
     const botMessage = createChatBotMessage(
-      `Choose a date`,
+      `Choose a date to book session on`,
       {
         widget: 'CalendarStrip',
       }
@@ -55,9 +55,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  const handleDayStrip  = () => {
+  const handleDayStrip  = (date) => {
     
-    const userMessage = createChatBotMessage(`Hi please select a slot`,
+    const userMessage = createChatBotMessage(`Hi please select a slot for the date ${date}`,
       {
         widget: 'TimeSlotStrip'
       },
@@ -71,7 +71,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   
 
   const handleDate = (date) => {
-    dispatch(setAge(date));
     const userMessage = createClientMessage(`${date}`);
 
     setState((prev) => ({
@@ -79,13 +78,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, userMessage],
     }));
 
-    handleDayStrip();
+    handleDayStrip(date);
 
   };
 
-  const handleSlot = (date) => {
-    dispatch(setAge(date));
-    const userMessage = createClientMessage(`${date}`);
+  const handleSlot = (slot) => {
+    const userMessage = createClientMessage(`${slot}`);
 
     setState((prev) => ({
       ...prev,
